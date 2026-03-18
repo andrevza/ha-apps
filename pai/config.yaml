@@ -1,5 +1,5 @@
 name: "Paradox Alarm Interface (Development version)"
-version: "0.0.3"
+version: "0.0.4"
 stage: experimental
 slug: "paradox_alarm_interface_dev"
 description: "Warning. Breaking changes. Clear MQTT before upgrading from deprecated version. Supports SP/MG/EVO, Serial and IP150 connections."
