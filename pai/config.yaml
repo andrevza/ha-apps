@@ -1,7 +1,7 @@
-name: "Paradox Alarm Interface (Development version)"
-version: "0.0.4"
+name: "PAI (Custom Build)"
+version: "0.0.6"
 stage: experimental
-slug: "paradox_alarm_interface_dev"
+slug: "pai_custom"
 description: "Warning. Breaking changes. Clear MQTT before upgrading from deprecated version. Supports SP/MG/EVO, Serial and IP150 connections."
 uart: true
 url: "https://github.com/andrevza/pai/tree/feature/spectra-fw7-power-clean"
