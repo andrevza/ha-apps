@@ -1,7 +1,7 @@
 name: "PAI (Custom Build)"
 slug: "pai_custom"
 description: "Paradox Alarm Interface built on HA host"
-version: "0.0.1"
+version: "0.0.2"
 startup: application
 boot: auto
 init: false
