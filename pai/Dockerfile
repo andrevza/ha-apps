@@ -1,6 +1,6 @@
 FROM python:3.14-alpine
 
-ENV PAI_CONFIG_FILE=/config/pai/pai.conf
+ENV PAI_CONFIG_FILE=/data/options.json
 
 RUN apk add --no-cache git tzdata
 

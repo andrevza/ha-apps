@@ -2,19 +2,61 @@ name: "PAI (Custom Build)"
 slug: "pai_custom"
 description: "Paradox Alarm Interface built on HA host"
 version: "0.0.1"
-startup: services
+startup: application
 boot: auto
 init: false
 host_network: true
+uart: true
+homeassistant_api: true
 arch:
   - aarch64
   - amd64
   - armv7
   - i386
+services:
+  - mqtt:need
+environment:
+  PAI_CONFIG_FILE: /data/options.json
 
 map:
   - config:rw
 
-options: {}
-schema: {}
+options:
+  LOGGING_LEVEL_CONSOLE: 20
+  LOGGING_LEVEL_FILE: 40
+  CONNECTION_TYPE: "IP"
+  SERIAL_PORT: "/dev/ttyUSB0"
+  SERIAL_BAUD: 9600
+  IP_CONNECTION_HOST: "127.0.0.1"
+  IP_CONNECTION_PORT: 10000
+  IP_CONNECTION_PASSWORD: "paradox"
+  KEEP_ALIVE_INTERVAL: 10
+  IO_TIMEOUT: 0.5
+  PASSWORD: "0000"
+  MQTT_ENABLE: true
+  MQTT_HOST: "core-mosquitto"
+  MQTT_PORT: 1883
+  MQTT_KEEPALIVE: 60
+  MQTT_USERNAME: "pai"
+  MQTT_PASSWORD: "change_me"
+  MQTT_HOMEASSISTANT_AUTODISCOVERY_ENABLE: true
 
+schema:
+  LOGGING_LEVEL_CONSOLE: "int"
+  LOGGING_LEVEL_FILE: "int"
+  CONNECTION_TYPE: "list(Serial|IP)"
+  SERIAL_PORT: "str?"
+  SERIAL_BAUD: "int(1200,)?"
+  IP_CONNECTION_HOST: "str?"
+  IP_CONNECTION_PORT: "port?"
+  IP_CONNECTION_PASSWORD: "password?"
+  KEEP_ALIVE_INTERVAL: "int?"
+  IO_TIMEOUT: "float?"
+  PASSWORD: "password?"
+  MQTT_ENABLE: "bool?"
+  MQTT_HOST: "str?"
+  MQTT_PORT: "port?"
+  MQTT_KEEPALIVE: "int?"
+  MQTT_USERNAME: "str?"
+  MQTT_PASSWORD: "password?"
+  MQTT_HOMEASSISTANT_AUTODISCOVERY_ENABLE: "bool?"
