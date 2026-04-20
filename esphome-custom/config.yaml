@@ -8,6 +8,7 @@ arch:
   - amd64
   - aarch64
 hassio_api: true
+homeassistant_api: true
 auth_api: true
 host_network: true
 ingress: true
